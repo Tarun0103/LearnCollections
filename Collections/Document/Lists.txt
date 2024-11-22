@@ -1,0 +1,121 @@
+'List' Collection
+List collection contains a group of elements of same type.
+
+Full Path: System.Collections.Generic.List
+
+The 'List' class is a generic class; so you need to specify data type of value while creating object.
+
+List<type> referenceVariable = new List<type>( );
+
+It is dynamically sized. You can add, remove elements at any time.
+It allows duplicate values.
+It is index-based. You need to access elements by using zero-based index.
+It is not sorted by default. The elements are stored in the same order, how they are initialized.
+It uses arrays internally; that means, recreates array when the element is added / removed. The 'Capacity' property holds the number of elements that can be stored in the internal array of the List. If you add more elements, the internal array will resized to the 'Count' of elements.
+
+Properties of 'List' class
+1.Count
+2. Capacity
+
+
+
+Methods of 'List' class
+
+1.Add(T) - List.Add(10) - Adds only new element
+
+2.AddRange(IEnumerable<T>) - List.AddRange(new List<int>( ) { newValue1, newValue2 } ) - Adds New Set of elements
+
+3.Insert(int, T) - List.Insert(int index, T newValue) - Adds element into specified index
+
+4. InsertRange(int, IEnumerable<T>) - List.InsertRange(2, new List<int>() { newValue1, newValue2 } )
+This method adds a new set of elements to the collection at the specified index.
+
+5.Remove(T) - List.Remove(value2) - This method removes the specified element from the collection.
+
+6.RemoveAt(int) - List.RemoveAt(int index) - This method removes an element from the collection at the specified index.
+
+7.RemoveRange(int, int) - List.RemoveRange(int index, int count)
+- This method removes specified count of elements starting from the specified startIndex.
+
+8.RemoveAll(Predicate<T>) - List.RemoveAll(value => condition) -List.RemoveAll( n => n >= 30 )
+This method removes all the elements that are matching with the given condition.
+You can write your condition in the lambda expression of Predicate type.
+
+9.Clear() - List.Clear( )
+This methods removes all elements in the collection.
+
+10.List - IndexOf( ) - int List.IndexOf(T value, int startIndex) - List.IndexOf(20)
+This method searches the collection for the given value.
+If the value is found, it returns its index.
+If the value is not found, it returns -1.
+
+The “IndexOf” method performs linear search. 
+That means it searches all the elements of the collection, 
+until the search value is found. When the search value is found in the collection, 
+it stops searching and returns its index.
+
+The linear search has good performance, 
+if the collection is small. But if the collection is larger, Binary search is recommended to improve the performance.
+
+11.List - BinarySearch( ) - int List.BinarySearch( T value)
+This method searches the array for the given value.
+- If the value is found, it returns its index.
+- If the value is not found, it returns -1.
+
+The “Binary Search” requires a collection, which is already sorted.
+On unsorted collections, binary search is not possible.
+It directly goes to the middle of the collection (collection size / 2),
+and checks that item is less than / greater than the search value.
+If that item is greater than the search value, it searches only in the first half of the collection.
+If that item is less than the search value, it searches only in the second half of the array.
+Thus it searches only half of the array. So in this way, it improves performance
+
+12.List - Contains( )  - bool List.Contains( T value )
+This method searches the specified element and returns 'true', if it is found; but returns 'false', if it is not found.
+
+13.List - Sort( ) - void List.Sort( )
+This method sorts the collection in ascending order.
+
+14. List - Reverse( ) - void List.Reverse( )
+This method reverses the collection.
+
+15.List - ToArray( ) - T[ ] List.ToArray( )
+This method converts the collection into an array with same elements.
+
+16. List - ForEach( ) - List.ForEach( n => { Console.WriteLine(n); } )
+This method executes the lambda expression once per each element.
+
+17.List - Exists( ) - List.Exists( n => n > 15 )
+This method executes the lambda expression once per each element.
+It returns true, if at least one element matches with the given condition; 
+but returns false, if no element matches with the given condition.
+
+18. List - Find( ) - List.Find( n => n > 15 )
+This method executes the lambda expression once per each element.
+It returns the first matching element, if at least one element matches with the given condition;
+but returns the default value,if no element matches with the given condition.
+
+19. List - FindIndex( ) - List.FindIndex( n => n > 15 )
+This method executes the lambda expression once per each element.
+It returns index of the first matching element, if at least one element matches with the given condition;
+but returns -1, if no element matches with the given condition.
+
+20. List - FindLast( ) - List.FindLast( n => n > 15 )
+This method executes the lambda expression once per each element.
+It returns the last matching element, if at least one element matches with the given condition; 
+but returns the default value, if no element matches with the given condition.
+
+21. List - FindLastIndex( ) - List.FindLastIndex( n => n > 15 )
+This method executes the lambda expression once per each element.
+It returns index of the last matching element, if at least one element matches with the given condition;
+but returns -1, if no element matches with the given condition.
+
+22. List - FindAll( ) - List.FindAll( n => n > 15 )
+This method executes the lambda expression once per each element.
+It returns all matching elements as a collection, if there are one or more matching elements;
+but returns empty collection if no matching elements.
+
+23. List - ConvertAll( ) - List.ConvertAll( n => Convert.ToDouble(n) )
+This method executes the lambda expression once per each element.
+It adds each returned element into a new collection and returns the same at last; 
+thus it converts all elements from the input collection as output collection.

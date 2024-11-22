@@ -1,0 +1,9 @@
+1. Collections are the standard way to store and manipulate group of elements 
+2. Collections are internally objects of specific 'collection classes' such as List, Dictionary, SortedList etc.
+
+List<type> referenceVariable = new List<type>( );
+
+Collections can store unlimited elements.
+- You can add, remove elements at any time.
+- You need not specify the size (no. of elements) while creating collection.
+- You can search, sort, copy collections using various built-in methods.
